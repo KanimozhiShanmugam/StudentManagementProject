@@ -1,0 +1,46 @@
+{% extends 'navbar.html' %}
+{% block content %}
+
+
+<h2 align="center">Student Details</h2>
+<table align="center" border="2" class="table">
+  <tr>
+    <td>Id</td>
+    <td>Student Name</td>
+    <td>Student Age</td>
+    <td>Student Phno</td>
+    <td>Student City</td>
+    <td>Student Course</td>
+    <td>Update</td>
+    <td>Delete</td>
+  </tr>
+  {% for i in data %}
+  <tr>
+    <td>
+      {{ i.id }}
+    </td>
+     <td>
+      {{ i.Student_Name }}
+    </td>
+     <td>
+      {{ i.Student_Age }}
+    </td>
+     <td>
+      {{ i.Student_Phno }}
+    </td>
+     <td>
+      {{ i.Student_City }}
+    </td>
+     <td>
+      {{ i.Student_Course }}
+    </td>
+     <td>
+      <a href="{% url 'up' i.id %}">Update</a>
+    </td>
+     <td>
+      <a href="{% url 'del' i.id %}">Delete</a>
+    </td>
+  </tr>
+    {% endfor %}
+</table>
+{% endblock %}

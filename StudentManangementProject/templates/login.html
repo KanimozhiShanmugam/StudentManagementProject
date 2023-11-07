@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<link href="{% static 'css/login.css' %}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fb4fb8c853.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<form action="logdata" method="post">
+    {% csrf_token %}
+    <center><i class="fa-solid fa-user fa-4x"></i>
+    <h1>User Login</h1>
+    <h3 style="color:red">{{ data }}</h3></center>
+<table align="center">
+
+  <tr> <td>
+    <i class="fa-regular fa-user"></i>
+   </td>
+<td>
+    <input type="text" name="txtuname" placeholder="Enter UserName">
+</td></tr>
+<tr><td>
+ <i class="fa-solid fa-key"></i>
+</td>
+<td>
+    <input type="password" name="txtpasswod" placeholder="Enter Password">
+</td></tr>
+<tr>
+<td><i class="fa-solid fa-arrow-right-to-bracket"></i></td>
+<td><input type="submit" name="btnreg" value="LOGIN"></td></tr>
+    <tr><td> </td><td><a href="{% url 'reg' %}">Signup</a></td></tr>
+
+</table>
+</form>
+</body>
+</html>
